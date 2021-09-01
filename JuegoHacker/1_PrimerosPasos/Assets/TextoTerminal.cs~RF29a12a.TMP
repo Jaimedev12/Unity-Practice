@@ -1,0 +1,76 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TextoTerminal : MonoBehaviour
+{
+    void EnseñarMenu()
+    {
+        Terminal.WriteLine("Qué onda.");
+        Terminal.WriteLine("Vamos a hackear unas cosas.");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Te voy a dar unas palabras que no      tienen sentido y tú tienes que");
+        Terminal.WriteLine("cambiarle el orden a las letras, así escomo se hackea.");
+        Terminal.WriteLine("Lo aprendí en el Scratch ;].");
+
+        Terminal.WriteLine("");
+
+        Terminal.WriteLine("Da click para continuar");
+
+        /*
+        Terminal.WriteLine("Presiona '1' para hackear la librería.");
+        Terminal.WriteLine("Presiona '2' para hackear a los");
+        Terminal.WriteLine("municipales.");
+        */
+    }
+    void ElegirNivel()
+    {
+        Terminal.WriteLine("Elige qué quieres hackear primero:");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Presiona '1' para hackear la librería.");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Presiona '2' para hackear a los");
+        Terminal.WriteLine("municipales.");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Tu respuesta:");
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        EnseñarMenu();
+    }
+
+    void OnUserInput(string input)
+    {
+        switch (input)
+        {
+            case "1":
+                print("Iniciando nivel 1");
+                break;
+            case "2":
+                print("Iniciando nivel 2");
+                break;
+            case "chinga tu madre":
+                print("La tuya, elige un buen nivel");
+                break;
+            default:
+                print("Nivel inválido");
+                break;
+        }
+
+        //print(input == "1");
+    }   
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Terminal.ClearScreen();
+            ElegirNivel();
+
+            //Debug.Log("Presionando el mouse");
+        }
+    }
+}

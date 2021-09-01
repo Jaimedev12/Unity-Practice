@@ -1,0 +1,108 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TextoTerminal : MonoBehaviour
+{
+    //Aquí van las variables públicas.
+    int nivel;
+    enum Pantalla { MenuPrincipal, MenuElegirNivel, Contraseña, Ganaste };
+    Pantalla pantallaActual = Pantalla.MenuPrincipal;
+
+    // Aquí van las fuciones.
+    void EnseñarMenuPrincipal()
+    {
+        pantallaActual = Pantalla.MenuPrincipal;
+        
+        Terminal.WriteLine("Qué onda.");
+        Terminal.WriteLine("Vamos a hackear unas cosas.");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Te voy a dar unas palabras que no      tienen sentido y tú tienes que");
+        Terminal.WriteLine("cambiarle el orden a las letras, así escomo se hackea.");
+        Terminal.WriteLine("Lo aprendí en el Scratch ;].");
+
+        Terminal.WriteLine("");
+
+        Terminal.WriteLine("Da click para continuar");
+
+        /*
+        Terminal.WriteLine("Presiona '1' para hackear la librería.");
+        Terminal.WriteLine("Presiona '2' para hackear a los");
+        Terminal.WriteLine("municipales.");
+        */
+    }
+    void ElegirNivel()
+    {
+        Terminal.WriteLine("Elige qué quieres hackear primero:");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Presiona '1' para hackear la librería.");
+        Terminal.WriteLine("Presiona '2' para hackear a los");
+        Terminal.WriteLine("municipales.");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Escribe 'menu' para volver atrás");
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Tu respuesta:");
+    }
+    void EmpezarJuego()
+    {
+        pantallaActual = Pantalla.Contraseña;
+        Terminal.WriteLine("Empezando el nivel " + nivel);
+        Terminal.WriteLine("Escribe tu contraseña: ");
+    }
+
+    // Funciones para usar los menús
+    void UsarMenuPrincipal(string input)
+    {
+        switch (input)
+        {
+            case "1":
+                nivel = 1;
+                EmpezarJuego();
+                break;
+            case "2":
+                nivel = 2;
+                EmpezarJuego();
+                break;
+            case "chinga tu madre":
+                Terminal.WriteLine("La tuya, elige un buen nivel");
+                break;
+            case "Chinga tu madre":
+                Terminal.WriteLine("La tuya, elige un buen nivel");
+                break;
+            case "menu":
+                Terminal.ClearScreen();
+                EnseñarMenuPrincipal();
+                break;
+            default:
+                Terminal.WriteLine("Nivel inválido");
+                break;
+        }
+    }
+
+
+    void Start()
+    {
+        EnseñarMenuPrincipal();
+    }
+
+    void OnUserInput(string input) //Cuando el jugador pone algo en la computadora.
+    {
+        if (input == "menu")
+        {
+            EnseñarMenuPrincipal();
+        } else if (pantallaActual == Pantalla.MenuPrincipal)
+        {
+            UsarMenuPrincipal(input);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && pantallaActual == Pantalla.MenuPrincipal)
+        {
+            Terminal.ClearScreen();
+            ElegirNivel();
+        }
+    }
+
+}
