@@ -1,21 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class displayScore : MonoBehaviour
 {
     public float points;
-    public TMP_Text textObject;
-    TMP_Text txt;
+    TextMeshProUGUI textComponent;
 
 
     private void Start()
     {
-        //txt = textObject.GetComponent<TextMeshProUGUI>();
+        textComponent = GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "CenterCollider")
+        if (collision.tag == "Player")
         {
             points += 1;
             Debug.Log(points);
@@ -24,8 +24,7 @@ public class displayScore : MonoBehaviour
 
     void Update()
     {
-        txt = textObject.GetComponent<TextMeshProUGUI>();
-        txt.text = "Holiwis";
+        textComponent.text = points.ToString();
     }
 
 }
