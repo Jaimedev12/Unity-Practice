@@ -5,26 +5,27 @@ using TMPro;
 public class displayScore : MonoBehaviour
 {
     public float points;
-    TextMeshProUGUI textComponent;
-
+    public TextMeshProUGUI textComponent;
+    TextMeshProUGUI txt;
 
     private void Start()
     {
-        textComponent = GetComponent<TextMeshProUGUI>();
+        txt = textComponent.GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "CenterCollider")
         {
             points += 1;
             Debug.Log(points);
+            txt.text = points.ToString();
         }
     }
 
     void Update()
     {
-        textComponent.text = points.ToString();
+        //textComponent.text = points.ToString();
     }
 
 }
