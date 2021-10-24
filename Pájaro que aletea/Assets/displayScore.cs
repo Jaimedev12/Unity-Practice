@@ -4,8 +4,8 @@ using TMPro;
 public class displayScore : MonoBehaviour
 {
     public float points;
-    public TextMeshProUGUI textObject;
-    //TextMeshProUGUI txt;
+    public TMP_Text textObject;
+    TMP_Text txt;
 
 
     private void Start()
@@ -24,7 +24,8 @@ public class displayScore : MonoBehaviour
 
     void Update()
     {
-        textObject.text = "Holiwis";
+        txt = textObject.GetComponent<TextMeshProUGUI>();
+        txt.text = "Holiwis";
     }
 
 }
