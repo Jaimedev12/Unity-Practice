@@ -217,6 +217,8 @@ GameObject:
   - component: {fileID: 551001307}
   - component: {fileID: 551001309}
   - component: {fileID: 551001308}
+  - component: {fileID: 551001310}
+  - component: {fileID: 551001311}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -340,6 +342,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551001306}
   m_CullTransparentMesh: 1
+--- !u!114 &551001310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551001306}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676a92de56bc06240ac3eb731457bfc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  textComponent: {fileID: 0}
+--- !u!114 &551001311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551001306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c430a67836a8b438259fb2537527cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &901799468
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  scoreText: {fileID: 551001308}
+  textComponent: {fileID: 0}
 --- !u!1 &1566610547
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +713,10 @@ PrefabInstance:
     - target: {fileID: 6713597893952078692, guid: 51fa532f21a55684b8c1d3ee0c8484dc, type: 3}
       propertyPath: m_Name
       value: "P\xE1jaro"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713597893952078692, guid: 51fa532f21a55684b8c1d3ee0c8484dc, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51fa532f21a55684b8c1d3ee0c8484dc, type: 3}

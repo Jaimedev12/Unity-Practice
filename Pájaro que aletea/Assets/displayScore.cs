@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class displayScore : MonoBehaviour
@@ -17,15 +16,13 @@ public class displayScore : MonoBehaviour
     {
         if (collision.tag == "CenterCollider")
         {
-            points += 1;
-            Debug.Log(points);
-            txt.text = points.ToString();
+            points++;
         }
     }
 
     void Update()
     {
-        //textComponent.text = points.ToString();
+        txt.text = points.ToString();
     }
 
 }
