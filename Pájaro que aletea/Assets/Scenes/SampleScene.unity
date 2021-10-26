@@ -217,8 +217,6 @@ GameObject:
   - component: {fileID: 551001307}
   - component: {fileID: 551001309}
   - component: {fileID: 551001308}
-  - component: {fileID: 551001310}
-  - component: {fileID: 551001311}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -292,13 +290,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -342,32 +340,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551001306}
   m_CullTransparentMesh: 1
---- !u!114 &551001310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551001306}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676a92de56bc06240ac3eb731457bfc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
-  textComponent: {fileID: 0}
---- !u!114 &551001311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551001306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c430a67836a8b438259fb2537527cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &901799468
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,12 +433,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -484,7 +456,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -531,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  textComponent: {fileID: 0}
+  textComponent: {fileID: 551001308}
 --- !u!1 &1566610547
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +677,10 @@ PrefabInstance:
     - target: {fileID: 6713597893952078688, guid: 51fa532f21a55684b8c1d3ee0c8484dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713597893952078690, guid: 51fa532f21a55684b8c1d3ee0c8484dc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6713597893952078690, guid: 51fa532f21a55684b8c1d3ee0c8484dc, type: 3}
       propertyPath: m_IsTrigger

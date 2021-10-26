@@ -24,7 +24,7 @@ public class spawnObject : MonoBehaviour
     {
         if (Time.time > spawnTime)
         {
-            spawnPos = new Vector3(spawnX, Random.Range(-3f, 3.8f), 0);
+            spawnPos = new Vector3(spawnX, Random.Range(-2.8f, 3.2f), 0);
             Instantiate(obstacle, spawnPos, Quaternion.identity);
 
             spawnTime += timeInterval;
